@@ -1,5 +1,6 @@
 package jp.tokuo.workshop.service
 
+import jp.tokuo.workshop.property.DemoProperty
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -9,8 +10,8 @@ class DemoServiceTest extends Specification {
     @Unroll
     def "test"() {
         given:
-//        REPLACE = Mock()
-        def target = new DemoService()
+        DemoProperty demoProperty = Mock()
+        def target = new DemoService(demoProperty)
 
         when:
         def result = target.returnRes(returnStr)
@@ -21,5 +22,6 @@ class DemoServiceTest extends Specification {
         where:
         returnStr   | expect
         "test"      | "test"
+        "hoge"      | "hoge"
     }
 }
