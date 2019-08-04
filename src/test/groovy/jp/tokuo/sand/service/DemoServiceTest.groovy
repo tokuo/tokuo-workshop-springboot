@@ -1,6 +1,6 @@
-package jp.tokuo.workshop.service
+package jp.tokuo.sand.service
 
-import jp.tokuo.workshop.property.DemoProperty
+import jp.tokuo.sand.property.DemoProperty
 import spock.lang.Specification
 import spock.lang.Unroll
 

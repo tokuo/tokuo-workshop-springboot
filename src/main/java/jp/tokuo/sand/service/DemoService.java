@@ -1,6 +1,6 @@
-package jp.tokuo.workshop.service;
+package jp.tokuo.sand.service;
 
-import jp.tokuo.workshop.property.DemoProperty;
+import jp.tokuo.sand.property.DemoProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

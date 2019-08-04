@@ -1,4 +1,4 @@
-package jp.tokuo.workshop.property;
+package jp.tokuo.sand.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

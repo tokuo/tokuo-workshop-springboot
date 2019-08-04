@@ -1,13 +1,13 @@
-package jp.tokuo.workshop;
+package jp.tokuo.sand;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WorkshopApplication {
+public class SandApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WorkshopApplication.class, args);
+		SpringApplication.run(SandApplication.class, args);
 	}
 
 }

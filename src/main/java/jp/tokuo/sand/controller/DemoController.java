@@ -1,6 +1,6 @@
-package jp.tokuo.workshop.controller;
+package jp.tokuo.sand.controller;
 
-import jp.tokuo.workshop.service.DemoService;
+import jp.tokuo.sand.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-public class MainController {
+public class DemoController {
 
     private final DemoService demoService;
 
     @Autowired
-    public MainController(DemoService demoService){
+    public DemoController(DemoService demoService){
         this.demoService = demoService;
     }
 
