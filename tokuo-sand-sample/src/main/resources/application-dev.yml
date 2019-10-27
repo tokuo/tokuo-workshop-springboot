@@ -1,0 +1,3 @@
+# キャメルケースは許されない
+demo:
+  demo-message: "hoge"
