@@ -24,6 +24,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
 	</properties>
 
@@ -62,6 +63,17 @@
 <!--					<artifactId>spring-boot-maven-plugin</artifactId>-->
 <!--					<version>${spring.version}</version>-->
 <!--				</plugin>-->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
