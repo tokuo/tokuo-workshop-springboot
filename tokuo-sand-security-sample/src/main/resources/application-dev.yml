@@ -1,0 +1,17 @@
+# キャメルケースは許されない
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.0.10:3306/tokuo_sand
+    username: pi
+    password: pi-secret # TODO 本来は隠す
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: tokuo_sand
+      connection-timeout: 5000
+      minimum-idle: 10
+      maximum-pool-size: 3
+      idle-timeout: 30000
+
+demo:
+  demo-message: "hoge"

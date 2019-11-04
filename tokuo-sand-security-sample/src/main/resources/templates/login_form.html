@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ログイン</title>
+    <meta content="login" name="page-name">
+    <div th:replace="common_header::header"></div>
+</head>
+<body>
+    <h2>Application</h2>
+    <p>SpringBoot Sample Implementation.</p>
+    <div role="alert" th:if="${msg != null}">
+        <th:block th:text="${msg}"></th:block>
+    </div>
+    <div role="alert" th:if="${errorMsg != null}">
+        <th:block th:text="${errorMsg}"></th:block>
+    </div>
+    <div id="loginErrorMsg" role="alert"
+         th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+        <th:block th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></th:block>
+    </div>
+
+    <form method="POST" th:action="@{/form/login}" th:object="${form}">
+        <label>Email</label>
+        <input maxlength="64" name="email" type="text">
+        <label>Password</label>
+        <input maxlength="32" name="password" type="password">
+        <button type="submit">sign in</button>
+    </form>
+
+    <form method="POST" th:action="@{/signup}" th:object="${userSignup}">
+        <label>email</label>
+        <input maxlength="64" name="email" type="text">
+        <label>username</label>
+        <input maxlength="16" name="name" type="text">
+        <label>password</label>
+        <input maxlength="32" name="password" type="password">
+        <button type="submit">Sign up</button>
+    </form>
+</body>
+</html>

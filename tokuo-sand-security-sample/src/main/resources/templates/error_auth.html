@@ -1,0 +1,14 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>エラー</title>
+    <meta content="error" name="page-name">
+    <div th:replace="common_header::header"></div>
+</head>
+<body>
+    <div role="alert" th:if="${error != null}">
+        <th:block th:text="${error}"></th:block>
+    </div>
+    <span th:if="${error} == 'system' or ${error} == 'timeout'" th:text="#{'error.' + ${error}}"></span>
+</body>
+</html>
