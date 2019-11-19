@@ -1,9 +1,5 @@
 package jp.tokuo.sand.security;
 
-import jp.tokuo.sand.security.FailureHandler;
-import jp.tokuo.sand.security.SuccessHandler;
-import jp.tokuo.sand.security.UserDetailsServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public static final String SIGNUP_URL = "/signup";
   public static final String ERROR_URL = "/error/**";
   public static final String TOP_PAGE_URL = "/home";
+
+  //TODO spring actuatorとspring securityの設定
 
   // TODO inmemory for test
 //  @Override

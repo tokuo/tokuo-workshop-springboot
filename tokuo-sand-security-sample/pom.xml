@@ -9,6 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
+  <groupId>jp.tokuo.sand</groupId>
   <artifactId>tokuo-sand-security-sample</artifactId>
   <packaging>jar</packaging>
   <name>tokuo-sand-security-sample</name>
@@ -39,6 +40,38 @@
         </exclusion>
       </exclusions>
     </dependency>
+<!--    &lt;!&ndash; JUnit5 &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.platform</groupId>-->
+<!--      <artifactId>junit-platform-commons</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.platform</groupId>-->
+<!--      <artifactId>junit-platform-engine</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.platform</groupId>-->
+<!--      <artifactId>junit-platform-launcher</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; JUnit5 jupiter &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.jupiter</groupId>-->
+<!--      <artifactId>junit-jupiter-api</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.jupiter</groupId>-->
+<!--      <artifactId>junit-jupiter-engine</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.junit.jupiter</groupId>-->
+<!--      <artifactId>junit-jupiter-params</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -86,39 +119,6 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- JUnit5 -->
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-commons</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-engine</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-launcher</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- JUnit5 jupiter -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <!-- spockがspring boot、jUnit5に追従できていない -->
     <!-- groovy setting -->
 <!--    <dependency>-->
@@ -148,7 +148,7 @@
   </dependencies>
 
   <build>
-    <finalName>tokuo-sand-sample</finalName>
+    <finalName>tokuo-sand-security-sample</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
