@@ -27,6 +27,7 @@
 		<java.version>11</java.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+		<micrometer.version>1.3.1</micrometer.version>
 	</properties>
 
 	<!-- Software Configuration Management -->
@@ -51,6 +52,12 @@
 		<dependencies>
 			<!-- Spring Boot -->
 			<!-- parentをspring-boot-starter-parentしているため、spring関連のdependencyManagementは記述不要 -->
+
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-registry-prometheus</artifactId>
+				<version>${micrometer.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
