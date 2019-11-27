@@ -1,4 +1,4 @@
-//package jp.tokuo.sand.service
+//package jp.tokuo.sand.sec.service
 //
 //import org.junit.Rule
 //import org.junit.experimental.runners.Enclosed

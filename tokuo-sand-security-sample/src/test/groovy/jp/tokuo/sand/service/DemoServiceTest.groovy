@@ -1,6 +1,6 @@
-//package jp.tokuo.sand.service
+//package jp.tokuo.sand.sec.service
 //
-//import jp.tokuo.sand.property.DemoProperty
+//import jp.tokuo.sand.sec.property.DemoProperty
 //import spock.lang.Specification
 //import spock.lang.Unroll
 //
