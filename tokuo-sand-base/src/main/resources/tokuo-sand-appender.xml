@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+  <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+  <springProperty name="TOKUO_SAND_ARG1" source="logging.tokuosand.arg1" defaultValue="MOCK"/>
+  <springProperty name="TOKUO_SAND_ARG2" source="logging.tokuosand.arg2" defaultValue="MOCK"/>
+
+
+  <appender name="TOKUO_SAND_CONSOLE" class="jp.tokuo.sand.base.appender.TokuoSandLogAppender">
+    <encoder>
+      <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+      <!-- layoutを用意指定も良い -->
+<!--      <layout class="jp.tokuo.sand.logback.MyLayout"/>-->
+    </encoder>
+    <arg1>${TOKUO_SAND_ARG1}</arg1>
+    <arg2>${TOKUO_SAND_ARG2}</arg2>
+
+<!--    <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--      <level>WARN</level>-->
+<!--      <onMatch>ACCEPT</onMatch>-->
+<!--      <onMismatch>NEUTRAL</onMismatch>-->
+<!--    </filter>-->
+  </appender>
+</included>

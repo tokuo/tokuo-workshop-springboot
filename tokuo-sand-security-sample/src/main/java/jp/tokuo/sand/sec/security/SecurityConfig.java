@@ -22,6 +22,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * 4. UserDetailsSerivceが、UserDetailsを返す
  * 5. 認証が成功すると、AuthenticationFilterが、AuthenticationSuccessHandlerを呼び出す
  * 5. 認証が失敗すると、AuthenticationFilterが、AuthenticationFailureHandlerを呼び出す
+ *
+ * さらに要約するとsurvletのreq, resヘッダーにトークンを仕込むのがspring security
  */
 @Configuration
 @EnableWebSecurity

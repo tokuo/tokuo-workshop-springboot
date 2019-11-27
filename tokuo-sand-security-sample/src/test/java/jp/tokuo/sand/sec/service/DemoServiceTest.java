@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 
 @DisplayName("JUnit5のお試しテスト")
+@SpringBootTest
 public class DemoServiceTest {
 
   @Test

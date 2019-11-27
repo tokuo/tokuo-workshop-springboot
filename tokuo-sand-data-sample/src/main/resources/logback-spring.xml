@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <logger name="jp.tokuo.sand" level="DEBUG" />
   <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+  <!-- tokuo-sand-appenderで利用しているので、デフォルトのConsoleAppenderは必要なし -->
+<!--  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--    <encoder>-->
+<!--      <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>-->
+<!--    </encoder>-->
+<!--  </appender>-->
+
+  <springProfile name="!cloud">
+    <include resource="tokuo-sand-appender.xml" />
+  </springProfile>
 
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
     <!-- 環境変数 PROMETHEUS_TARGET_COLLECTOR_LOG_DIR を動作環境ごとに定義する -->
@@ -11,14 +21,13 @@
     </encoder>
   </appender>
 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
-    </encoder>
-  </appender>
 
-  <root level="info">
+  <logger name="jp.tokuo.sand.base" level="DEBUG" />
+
+
+  <root level="INFO">
+<!--    <appender-ref ref="STDOUT" />-->
+    <appender-ref ref="TOKUO_SAND_CONSOLE" />
     <appender-ref ref="FILE" />
-    <appender-ref ref="STDOUT" />
   </root>
 </configuration>
