@@ -43,7 +43,7 @@ public class ControllerTest {
   void controllerTest(String candidate) throws Exception {
     // given
     ResponseEntity<String> response;
-    final String LOCAL_URI = "http://localhost:" + port.toString() + "/test/" + candidate;
+    final String LOCAL_URI = "http://localhost:" + port.toString() + "/api/v1/get/" + candidate;
 
     // when
 //    response = testRestTemplate.getForEntity(LOCAL_URI, String.class);

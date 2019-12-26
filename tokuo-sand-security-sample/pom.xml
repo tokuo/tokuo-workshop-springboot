@@ -3,6 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <description>this app is security sample</description>
+
   <parent>
     <groupId>jp.tokuo.sand</groupId>
     <artifactId>tokuo-sand-springboot</artifactId>
@@ -10,9 +12,7 @@
   </parent>
 
   <artifactId>tokuo-sand-security-sample</artifactId>
-  <packaging>jar</packaging>
   <name>tokuo-sand-security-sample</name>
-  <description>this app is security sample</description>
 
   <properties>
     <java.version>11</java.version>
@@ -31,7 +31,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
-      <!-- デフォルトで組み込まれているJUnit4の排除 -->
       <exclusions>
         <exclusion>
           <groupId>org.junit.vintage</groupId>
@@ -86,28 +85,6 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- spockがspring boot、jUnit5に追従できていない -->
-    <!-- groovy setting -->
-<!--    <dependency>-->
-<!--      <groupId>org.codehaus.groovy</groupId>-->
-<!--      <artifactId>groovy-all</artifactId>-->
-<!--      <version>${groovy.version}</version>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
-    <!-- spock setting -->
-<!--      <dependency>-->
-<!--        <groupId>org.spockframework</groupId>-->
-<!--        <artifactId>spock-core</artifactId>-->
-<!--        <version>${spock.version}</version>-->
-<!--        <scope>test</scope>-->
-<!--      </dependency>-->
-<!--      <dependency>-->
-<!--        <groupId>org.spockframework</groupId>-->
-<!--        <artifactId>spock-spring</artifactId>-->
-<!--        <version>${spock.version}</version>-->
-<!--        <scope>test</scope>-->
-<!--      </dependency>-->
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -120,14 +97,16 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-<!--        <configuration>-->
-<!--          <finalName>tokuo-sand-sample</finalName>-->
-<!--        </configuration>-->
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.codehaus.gmaven</groupId>-->
-<!--        <artifactId>groovy-maven-plugin</artifactId>-->
-<!--      </plugin>-->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
 </project>
