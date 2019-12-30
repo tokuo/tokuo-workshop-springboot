@@ -19,7 +19,7 @@ import org.springframework.web.client.RestOperations;
 import lombok.Data;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ControllerTest {
+public class DataControllerMTest {
 
   private ObjectMapper objectMapper;
   private final TestRestTemplate testRestTemplate;
@@ -29,7 +29,7 @@ public class ControllerTest {
   private Integer port;
 
   @Autowired //テストではアノテーション必須
-  public ControllerTest(ObjectMapper objectMapper, TestRestTemplate testRestTemplate,
+  public DataControllerMTest(ObjectMapper objectMapper, TestRestTemplate testRestTemplate,
       final RestTemplateBuilder restTemplateBuilder, final RestTemplateInterceptor restTemplateInterceptor){
     this.objectMapper = objectMapper;
     this.testRestTemplate = testRestTemplate;
@@ -37,10 +37,10 @@ public class ControllerTest {
   }
 
 
-  @DisplayName("Controllerのテスト")
+  @DisplayName("入力したAPIのエンドポイントがresponseとして出力できていること")
   @ParameterizedTest
   @ValueSource(strings = {"hoge", "fuga", "piyo"})
-  void controllerTest(String candidate) throws Exception {
+  void getTest_20X_01(String candidate) throws Exception {
     // given
     ResponseEntity<String> response;
     final String LOCAL_URI = "http://localhost:" + port.toString() + "/api/v1/get/" + candidate;
