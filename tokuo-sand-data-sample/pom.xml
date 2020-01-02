@@ -8,11 +8,12 @@
 	<parent>
 		<groupId>jp.tokuo.sand</groupId>
 		<artifactId>tokuo-sand-springboot</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 
 	<artifactId>tokuo-sand-data-sample</artifactId>
 	<name>tokuo-sand-data-sample</name>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>11</java.version>
@@ -102,5 +103,4 @@
 			</testResource>
 		</testResources>
 	</build>
-
 </project>

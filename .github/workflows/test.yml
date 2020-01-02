@@ -1,0 +1,33 @@
+name: test
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup openJDK11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11.0.3
+      - name: TEST
+        run: mvn -B -e test
+      - name: RESEARCH
+        run: |
+          pwd
+          echo 'ls -a ./'
+          ls -a ./
+          echo 'ls -a ~/'
+          ls -a ~/
+          echo 'ls -a /home/runner/work'
+          ls -a /home/runner/work
+          echo 'ls -a /home/runner/work/tokuo-sand-springboot'
+          ls -a /home/runner/work/tokuo-sand-springboot
+          cat ~/.m2/settings.xml

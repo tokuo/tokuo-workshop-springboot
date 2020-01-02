@@ -1,0 +1,32 @@
+# https://help.github.com/ja/actions
+# 実行時のhome directoryは `/home/runner`
+# 実行時のcurrent directoryは `/home/runner/work/tokuo-sand-springboot/tokuo-sand-springboot`
+name: Deploy to GitHub Packages
+
+# https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+on: [push]
+
+#env:
+
+jobs:
+  build:
+    # 実行環境: https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners
+    # インストール済みソフト: https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners
+    runs-on: ubuntu-latest
+
+    # actionsの一覧: https://github.com/actions
+    # actionsの一覧: https://github.com/marketplace?type=actions
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup openJDK11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11.0.3
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      # GitHub Packages: https://help.github.com/ja/github/managing-packages-with-github-packages/configuring-apache-maven-for-use-with-github-packages
+#      - name: Deploy to Github Packages
+#        env:
+#          # GITHUB_ACTOR: tokuo <- 既に設定されている
+#          GITHUB_TOKEN: ${{ secrets.TOKUO_SAND_SECRET }}
+#        run: mvn -s settings.xml -B -e -Dmaven.wagon.http.pool=false clean deploy
