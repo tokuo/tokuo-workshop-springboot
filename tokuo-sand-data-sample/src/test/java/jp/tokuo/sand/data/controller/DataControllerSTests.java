@@ -20,7 +20,7 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
-public class DataControllerSTest {
+public class DataControllerSTests {
 
   @Test
   @DisplayName("単体テスト")
@@ -42,7 +42,7 @@ public class DataControllerSTest {
     Class targetClass = target.getClass();
     Field targetField = targetClass.getDeclaredField("myCounter"); // privateは.getDeclaredField("FIELD")、publicは.getField("FIELD")
     targetField.setAccessible(true); // finalを無効化
-    targetField.set(target, new MyCounter());
+    targetField.set(target, new MyCounter()); // 無効化できたためsetする
     // ここまでリフレクション
     SampleData sampleData = new SampleData();
     sampleData.setCandidate("hoge");

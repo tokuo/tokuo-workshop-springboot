@@ -8,6 +8,7 @@ import jp.tokuo.sand.data.service.DateTimeService;
 import jp.tokuo.sand.data.service.ParallelService;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,7 +61,7 @@ public class DataController {
     return ResponseEntity.ok().body(objectMapper.writeValueAsString(res));
   }
 
-  @PostMapping(value = "/post")
+  @PostMapping(value = "/post", produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<String> postTest(
       @RequestParam(name = "param01", required = false) String param01,
       @RequestParam(name = "param02", required = false) String param02

@@ -16,10 +16,12 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestOperations;
 
+import java.util.Objects;
+
 import lombok.Data;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class DataControllerMTest {
+public class DataControllerMTests {
 
   private ObjectMapper objectMapper;
   private final TestRestTemplate testRestTemplate;
@@ -29,8 +31,12 @@ public class DataControllerMTest {
   private Integer port;
 
   @Autowired //テストではアノテーション必須
-  public DataControllerMTest(ObjectMapper objectMapper, TestRestTemplate testRestTemplate,
-      final RestTemplateBuilder restTemplateBuilder, final RestTemplateInterceptor restTemplateInterceptor){
+  public DataControllerMTests(
+      ObjectMapper objectMapper,
+      TestRestTemplate testRestTemplate,
+      final RestTemplateBuilder restTemplateBuilder,
+      final RestTemplateInterceptor restTemplateInterceptor
+  ){
     this.objectMapper = objectMapper;
     this.testRestTemplate = testRestTemplate;
     this.restOperations = restTemplateBuilder.additionalInterceptors(restTemplateInterceptor).build();
@@ -50,11 +56,11 @@ public class DataControllerMTest {
     response = restOperations.getForEntity(LOCAL_URI, String.class);
 
     // then
-    System.out.println(response.getBody());
-    System.out.println(response.getHeaders());
-    System.out.println(response.getStatusCode());
-    System.out.println(response.getStatusCodeValue());
-    ResponseBody responseBody = objectMapper.readValue(response.getBody(), ResponseBody.class);
+//    System.out.println(response.getBody());
+//    System.out.println(response.getHeaders());
+//    System.out.println(response.getStatusCode());
+//    System.out.println(response.getStatusCodeValue());
+    ResponseBody responseBody = objectMapper.readValue(Objects.requireNonNull(response.getBody()), ResponseBody.class);
     Assertions.assertEquals(responseBody.getCandidate(), candidate);
   }
 
