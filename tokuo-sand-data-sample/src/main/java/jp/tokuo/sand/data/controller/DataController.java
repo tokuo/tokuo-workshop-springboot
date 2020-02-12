@@ -20,11 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/v1")
 @Slf4j
+@Api(tags = "DataControlle")
 public class DataController {
 
   private final ParallelService parallelService;
@@ -47,6 +52,15 @@ public class DataController {
 
   @GetMapping(value = "/get/{anyWord}")
   @Timed
+  @ApiOperation(
+      value = "Get the metrics",
+      notes = "get test"
+  )
+  @ApiResponses(value = {
+      @ApiResponse(code = 401, message = "Token Required"),
+      @ApiResponse(code = 403, message = "Permission Denied."),
+      @ApiResponse(code = 500, message = "Internal Server Error")
+  })
   public ResponseEntity<String> getTest(@PathVariable String anyWord) throws JsonProcessingException {
     SampleData res = new SampleData();
     res.setCandidate(anyWord);
