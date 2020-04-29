@@ -21,8 +21,8 @@
 	<modules>
 		<module>tokuo-sand-base</module>
 		<module>tokuo-sand-security-sample</module>
-		<module>tokuo-sand-data-sample</module>
 		<module>tokuo-sand-api-sample</module>
+		<module>tokuo-sand-reactive-sample</module>
 	</modules>
 
 	<properties>
