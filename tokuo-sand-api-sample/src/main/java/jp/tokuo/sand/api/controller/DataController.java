@@ -83,4 +83,15 @@ public class DataController {
     dateTimeService.showDateTime();
     return ResponseEntity.ok().body(String.format("{\"param\": \"param\"}"));
   }
+
+  // for reactive
+  @GetMapping(value = "/test/sleep", produces = {MediaType.APPLICATION_JSON_VALUE})
+  public ResponseEntity<String> getTestSleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    return ResponseEntity.ok().body("watch log of reactive side.");
+  }
 }

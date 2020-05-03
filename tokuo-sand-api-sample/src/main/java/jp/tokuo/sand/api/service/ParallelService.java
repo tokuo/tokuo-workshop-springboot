@@ -33,13 +33,15 @@ public class ParallelService {
    * ListやMapなどのオブジェクトの中にあるフィールドに作用するメソッドの呼び出し（List#addやMap#putなど）は利用できる。
    */
   public void referVariable(){
-    List<String> myStrList = new ArrayList<>();
-    myStrList.add("aaa");
-    myStrList.add("bbb");
-    myStrList.add("ccc");
+    List<String> myStrList = new ArrayList<>(){{
+        add("aaa");
+        add("bbb");
+        add("ccc");
+    }};
 
-    List<String> insertList = new ArrayList<>();
-    insertList.add("first");
+    List<String> insertList = new ArrayList<>(){{
+        add("first");
+    }};
 
     myStrList.stream().parallel().forEach(
         mystr -> {
