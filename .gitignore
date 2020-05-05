@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+TMPDIR_IS_UNDEFINED/
 
 ### STS ###
 .apt_generated
