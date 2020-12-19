@@ -10,8 +10,9 @@ RUN yum update -y \
   && mkdir -p ./tokuo-sand-non-spring
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk
-ENV PATH $PATH:/opt/apache-maven-3.6.1/bin
-# ENV PATH $PATH:/usr/local/apache-maven-3.6.1/bin
+ENV M2_HOME /opt/apache-maven-3.6.1
+# ENV M2_HOME /usr/local/apache-maven-3.6.1
+ENV PATH ${PATH}:${M2_HOME}/bin
 
 ADD tokuo-sand-non-spring/ ./tokuo-sand-non-spring
 
